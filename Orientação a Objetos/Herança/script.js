@@ -2,10 +2,11 @@
 
 class Animal
 {
-    constructor()
+    //Construtor com inicialização de atributos por meio de parâmetros
+    constructor(atam, apes)
     {
-        this.tamanho = 0
-        this.peso = 0
+        this.tamanho = atam
+        this.peso = apes
     }
 
     correr()
@@ -23,10 +24,11 @@ class Animal
 
 class Cachorro extends Animal
 {
-    constructor()
+    constructor(atam, apes, ctam)
     {
-        super()
-        this.tamanho_orelha = 0
+        //Utilização do construtor da classe genérica com alocação de atributos
+        super(atam, apes)
+        this.tamanho_orelha = ctam
     }
 
     latir()
@@ -46,14 +48,18 @@ class Papagaio extends Animal
 {
     voar()
     {
+        //Utilização do método da classe pai
+        super.dormir()
         console.log("Voou")
     }
 }
 
 const papagaio_1 = new Papagaio()
-const cachorro_1 = new Cachorro()
+const cachorro_1 = new Cachorro(20, 60, 5)
 
 cachorro_1.correr()
 
 papagaio_1.voar()
 papagaio_1.correr()
+
+console.log(cachorro_1.tamanho)
