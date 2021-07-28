@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionando elementos</title>
+
+    <!--Estilo css-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="destaque">Área de conteúdo</div>
+    <h1 class="vermelho">Título do site</h1>
+    <p>Subtítulo</p>
+    <h1 class="vermelho">Título do site2</h1>
+
+    <ul>
+        <li class="primeiro">Item 1</li>
+        <li>Item 2</li>
+    </ul>
+
+    <ul>
+        <li class="primeiro">Item 1</li>
+        <li>Item 2</li>
+    </ul>
+
+    <input type="text" name="nome">
+    <input type="text" name="nome">
+
+    <!--Javascript-->
+    <script type="text/javascript">
+
+    /*
+    -----------------------------------------------------------------------------------------------------------------------------------------
+    *//*
+        const colecao = document.getElementsByTagName('li')         //Retorna todas as tags li em um formato de coleção (parecido com array)
+        const arr = Array.from(colecao)                             //Converte a coleção para um array
+
+        arr.forEach(element => console.log(element))
+    *//*
+    -----------------------------------------------------------------------------------------------------------------------------------------
+    *//*
+        const colecao = document.getElementsByClassName('vermelho')          //Retorna todas as tags com a classe vermelho em formato de coleção
+    *//*
+    -----------------------------------------------------------------------------------------------------------------------------------------
+    *//*
+        const colecao = document.getElementsByName('nome')         //Retorna todas as tags (geralmente forms) com a name "nome" em formato de nodelist
+    *//*
+    -----------------------------------------------------------------------------------------------------------------------------------------
+    */
+        const colecao = document.querySelectorAll('li.primeiro')            //Retorna todas as tags com o seletor li.primeiro em formato de nodelist
+    </script>
+</body>
+</html>
