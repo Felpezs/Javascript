@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionando elementos</title>
+
+    <!--Estilo css-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="conteudo">Conteudo 1</div>
+
+    <ul id="itens">
+        <li>Pedro</li>
+        <li>Ana</li>
+    </ul>
+
+    <p id="item-clonar">Tamires</p>
+
+    <button onclick="adicionar()">Adicionar</button>
+    <button onclick="remover()">Remover</button>
+
+    <script type="text/javascript">
+
+        //const obj = document.getElementById('conteudo')
+
+        //Apesar de similar, o textContent aceita apenas texto, já o innerHTML aceita Tags E Texto
+
+        //obj.innerHTML = "<p style='color: red'>Felipao</p>"
+        //obj.textContent = '<p>Felipao</p>'
+
+        const ul = document.getElementById('itens')
+        const li = document.createElement('li')             //Cria um novo elemento
+        const li_2 = document.createElement('li')           //Cria um novo elemento
+
+        console.log(ul.children)
+        function adicionar(){
+
+            const itemClonar= document.getElementById('item-clonar')
+
+            const item = itemClonar.cloneNode(true)        //Clona o elemento com filhos (true) ou somente o elemento (false)
+
+            ul.appendChild(item)
+            /*
+            //Similar a opção do textContent
+            const texto = document.createTextNode('Marcio')
+            li.appendChild(texto)
+            */
+            li.textContent = 'Marcio'
+            li_2.textContent = 'Amanda'
+            ul.appendChild(li)                                  //Adiciona um elemento no objeto
+            ul.insertBefore(li_2, ul.children[1])               //Adiciona a li_2 antes do primeiro elemento da ul
+        }
+
+        function remover(){
+            ul.removeChild(li)
+            ul.removeChild(li_2)
+        }
+    </script>
+</body>
+</html>

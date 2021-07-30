@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionando elementos</title>
+
+    <!--Estilo css-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <span class="vermelho texto">
+        Felipe
+    </span>
+
+    <button onclick="executar()">Clique aqui</button>
+    <script type="text/javascript">
+        
+        function executar(){
+            const obj = document.querySelector('span')
+            const classes = obj.classList
+
+            console.log(classes.contains('vermelho'))           //Permite verificar se existe a classe na lista de classes
+            classes.add('laranja', 'texto')                     //Adiciona classes
+            classes.className = "vermelho"                      //Substitui classes
+            classes.remove('vermelho')                          //Remove uma classse
+            classes.toggle('laranja')                           //Alterna entre a classe
+            
+        }
+    </script>
+</body>
+</html>
