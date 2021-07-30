@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionando elementos</title>
+
+    <!--Estilo css-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <span id="itens" quantidade="0" data-status="pendente">
+        0 itens no carrinho
+    </span>
+
+    <ul id="lista">
+        <li codigo="001">Felipe</li>
+        <li codigo="002">Ana</li>
+    </ul>
+
+    <label id="labelNome" for="nome">Nome</label>
+    <input type="text" id="nome" name="nome">
+    <script type="text/javascript">
+        const obj = document.getElementById('itens')
+
+    /*
+    -----------------------------------------------------------------------------------------------------------------------------------------
+    */
+
+        console.log(obj.getAttribute('quantidade'))         //Atributos personalizados só podem ser acessados por getAttribute
+        obj.setAttribute('quantidade', '2')                 //Atributos personalizados só podem ser setados por setAttribute
+
+        console.log(obj.getAttribute('quantidade'))
+
+    /*
+    -----------------------------------------------------------------------------------------------------------------------------------------
+    */
+        //Atributos personalizados na forma: data- podem ser acessados ou setados por meio do dataset
+        console.log(obj.dataset.status)
+    
+    /*
+    -----------------------------------------------------------------------------------------------------------------------------------------
+    */
+
+        console.log(obj.hasAttribute('quantidade'))         //Verifica se o objeto tem o atributo, retornando True ou False
+
+    /*
+    -----------------------------------------------------------------------------------------------------------------------------------------
+    */
+
+        obj.removeAttribute('quantidade')                   //Remove um atributo personalizável
+
+    /*
+    -----------------------------------------------------------------------------------------------------------------------------------------
+    */
+
+        console.log(obj.attributes)       //Retorna os atributos de obj em formato de namednodemap (podendo ser acessado como array ou pelo atributo)
+        console.log(obj.attributes.id)
+        console.log(obj.attributes['id'])
+
+    /*
+    -----------------------------------------------------------------------------------------------------------------------------------------
+    */
+
+        const obj2 = document.getElementById('labelNome')
+
+        console.log(obj2.htmlFor)                        //Forma para acessar o atributo for
+        console.log(obj2.getAttribute('for'))
+    </script>
+</body>
+</html>
