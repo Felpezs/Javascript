@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionando elementos</title>
+
+    <!--Estilo css-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+        <div>Irmão Anterior</div>
+        <div id="itens">
+            <p>Primeiro</p>
+            <p>Segundo</p>
+            <p>Terceiro</p>
+            <p>Quarto</p>
+        </div>
+        <div>Próximo Irmão</div>
+
+    <script type="text/javascript">
+        const lista = document.querySelector('div#itens')
+        console.log(lista.parentNode)                   //Seleciona o contâiner pai
+
+        //Todos os atributos a seguir consideram espaços em branco
+        console.log(lista.childNodes)                   //Seleciona os nós filhos
+        console.log(lista.firstChild)                   //Seleciona o primeiro nó filho
+        console.log(lista.lastChild)                    //Seleciona o ultimo nó filho
+        console.log(lista.nextSibling)                  //Seleciona o próximo irmão
+        console.log(lista.previousSibling)              //Seleciona o irmão anterior
+
+        //Todos os atributos a seguir não consideram espaços em branco
+        console.log(lista.children)                     //Seleciona os nós filhos
+        console.log(lista.firstElementChild)            //Seleciona o primeiro nó filho
+        console.log(lista.lastElementChild)             //Seleciona o último nó filho
+        console.log(lista.nextElementSibling)           //Seleciona o próximo irmão
+        console.log(lista.previousElementSibling)       //Seleciona o irmão anterior
+    </script>
+</body>
+</html>

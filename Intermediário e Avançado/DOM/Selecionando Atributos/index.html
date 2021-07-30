@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionando elementos</title>
+
+    <!--Estilo css-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <img id="imagem" src="img/celular.png" width="500">
+    <a id="link" href="https://www.google.com">Google</a>
+
+    <button onclick="alterarFoto()">Alterar</button>
+
+    <script type="text/javascript">
+        const img = document.querySelector('img#imagem')
+
+        console.log(img.getAttribute('src'))                    //Captura um atributo pelo seu nome
+        console.log(img['src'])                                 //Captura um atributo pelo seu nome como um array
+        console.log(img.width)                                  //Captura um atributo pelo seu nome como um objeto
+
+        const alterarFoto = function()
+        {
+            const img = document.querySelector('img#imagem')
+            img.src = "img/grafico.png"
+        }
+    </script>
+</body>
+</html>

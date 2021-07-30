@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionando elementos</title>
+
+    <!--Estilo css-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <form name="cadastro">
+        <input type="text" name="nome">
+        <input type="text" name="email">
+        <select name="sexo">
+            <option value="">--</option>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+        </select>
+    </form>
+
+    <!--Button não deve ficar dentro do forms para evitar ações indesejáveis-->
+    <button onclick="configurarInputsForms()">Inicializar Inputs</button>
+    <script type="text/javascript">
+    /*
+    -----------------------------------------------------------------------------------------------------------------------------------------
+    */
+        const obj = document.getElementsByName('cadastro')              //Seleciona pelo valor de name
+        console.log(obj)
+
+    /*
+    -----------------------------------------------------------------------------------------------------------------------------------------
+    */
+
+        console.log(document.forms)                                     //Retorna todos os forms em formato de coleção
+    
+    /*
+    -----------------------------------------------------------------------------------------------------------------------------------------
+    */
+
+        console.log(document.cadastro.nome)              //Acessa o forms pelo valor de name e depois acessa os elementos de forms pelo valor de name
+    
+    /*
+    -----------------------------------------------------------------------------------------------------------------------------------------
+    */
+
+        //Seta um novo valor para o elemento que possui "nome" como name dentro do forms que possui  "cadastro" como name
+        document.cadastro.nome.value = "Olá"            
+        document.cadastro.sexo.value = "masculino"            
+    
+    /*
+    -----------------------------------------------------------------------------------------------------------------------------------------
+    */
+        const configurarInputsForms = function(){
+            document.cadastro.nome.value = "Felipe"
+            document.cadastro.email.value = "email@dominio.com"
+            document.cadastro.sexo.value = ""
+        }
+
+        const nome = document.cadastro.nome.value               //Recupera o valor da entrada (funciona tambem com ID's)
+    </script>
+</body>
+</html>
