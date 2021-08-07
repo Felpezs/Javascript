@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+
+    <!--Estilo css-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <button id="botao">Clique</button>
+    <h1 id="h1">Titulo</h1>
+    <script type="text/javascript">
+        function executar(){
+            console.log("Executar")
+        }
+
+        const obj = document.getElementById('botao')
+        const obj2 = document.getElementById('h1')
+
+        //obj.addEventListener('click', executar)     //Captura cliques (down->up)
+        //obj2.addEventListener('click', executar)
+
+        //obj.addEventListener('dblclick', executar)     //Captura cliques duplos (down->up)
+        //obj.addEventListener('mousedown', executar)     //Captura clique (down)
+        //obj.addEventListener('mouseup', executar)     //Captura clique (up)
+        //obj.addEventListener('mousemove', executar)     //Captura movimentos do mouse
+        //obj.addEventListener('mouseover', executar)     //Captura movimentos de entrada do mouse no obj
+        obj.addEventListener('mouseout', executar)     //Captura movimentos de saida do mouse no obj
+    </script>
+</body>
+</html>

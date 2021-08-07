@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+
+    <!--Estilo css-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <input type="text" id="entrada">
+    <script type="text/javascript">
+        function executar(){
+            console.log("Executar")
+        }
+
+        const obj = document.getElementById('entrada')
+        obj.addEventListener('keydown', executar)           //Executa quando a tecla está down
+        //obj.addEventListener('keyup', executar)           //Executa quando a tecla está esta down e vai para up
+        obj.addEventListener('keypress', executar)           //Executa quando caracteres estão sendo inseridos (letras, acentos e números)
+    </script>
+</body>
+</html>

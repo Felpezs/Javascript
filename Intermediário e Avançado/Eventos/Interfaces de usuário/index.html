@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+
+    <!--Estilo css-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body onload="executar()">
+    <!--
+        load: pagina terminou de carregar
+        unload: página está carregando
+        error: navegador encontrou erro
+        resize: janela foi redimensionada
+        scrooll: usuário rolou a página
+    -->
+    <p style="font-size: 60px;">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi tenetur ducimus laboriosam vitae quasi reiciendis minus maxime molestias minima laudantium. Inventore facilis molestias doloribus quia amet, adipisci soluta deserunt fugit.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae porro fugiat impedit nisi recusandae hic perferendis quibusdam odio culpa veniam incidunt reprehenderit odit dolorum vitae, accusamus dolores repellat labore officia?
+    </p>
+    <script type="text/javascript">
+        function executar(){
+            console.log("Executar")
+        }
+        function executar2(){
+            console.log("Executar scrooll")
+        }
+
+        //window é o objeto janela
+        window.addEventListener('load', executar)
+        window.addEventListener('unload', executar)
+        window.addEventListener('error', executar)           //Executa caso encontrar erros na window
+        window.addEventListener('resize', executar)
+        window.addEventListener('scroll', executar2)
+    </script>
+</body>
+</html>

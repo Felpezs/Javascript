@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+
+    <!--Estilo css-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <form name="formulario">
+        <input type="text" name="entrada" placeholder="Nome">
+        <br><br>
+        <hr>
+        sexo:
+        <select name="selecao">
+            <option>--</option>
+            <option>Masculino</option>
+            <option>Feminino</option>
+        </select>
+        <hr>
+        <input type="radio" name="idade" value="0-18"> 0-18 <br>
+        <input type="radio" name="idade" value="30"> 30 <br>
+        <hr>
+        <input type="checkbox" name="termo"> Aceitar termos <br>
+
+        <input type="submit" value="Salvar">
+        <input type="reset" value="Limpar">
+    </form>
+    <script type="text/javascript">
+
+        function executar(){
+            console.log("Executar")
+        }
+
+        function submit(event){
+            //console.log(event)
+
+            if(entrada.value == "")
+            {
+                console.log("Digite o nome")
+                event.preventDefault()          //Previne ações padrões do evento
+            }
+        }
+
+        const form = document.formulario
+        const entrada = form.entrada
+        const selecao = form.selecao
+        const radio = form.idade
+        const check = form.termo
+
+        /*Eventos de input*/
+
+        //entrada.addEventListener('input', executar)     //Valor de qualquer input mudou
+        //entrada.addEventListener('cut', executar)       //Executa quando o comando cut é feito
+        //entrada.addEventListener('copy', executar)       //Executa quando o comando copy é feito
+        //entrada.addEventListener('paste', executar)       //Executa quando o comando paste é feito
+        entrada.addEventListener('select', executar)       //Executa quando o comando de seleção é feito
+
+        /*Eventos de select*/
+        selecao.addEventListener('change', executar)        //Caixa de seleção alterada
+
+        /*Eventos de radio (devem ser aplicados em cada opção)*/
+        radio[0].addEventListener('change', executar)
+        radio[1].addEventListener('change', executar)
+
+        /*Eventos de checkbox*/
+        check.addEventListener('change',executar)
+
+        /*Eventos de form*/
+        form.addEventListener('submit', submit)         //Executa quando é feito um submit
+        form.addEventListener('reset', executar)        //Executa quando o form é resetado
+    </script>
+</body>
+</html>
